@@ -1,0 +1,34 @@
+#iconoYtitulo{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#iconoYtitulo{
+    float: left;
+}
+
+#iconoYtitulo img{
+    height: 70%;
+    width: 30%;
+}
+
+#iconoYtitulo h3{
+    margin-top: 7%;
+    margin-left: 5%;
+}
+
+
+#paisYregion{
+    position: relative;
+    text-align: right;
+}
+
+#paisYregion h3{
+    position: relative;
+    margin-top: 10%;
+}
+
+#rowSuperiorTemperatura{
+    top: -45%;
+}
+

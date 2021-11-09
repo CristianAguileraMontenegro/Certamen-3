@@ -1,0 +1,46 @@
+<div class="row" id="rowSuperiorTemperatura">
+    <div class="col-md-12 col-sm-12" id="colBotones">
+        <button type="button" id="Celcius" (click)="cambiarCelcius(); desactivarC()">Celcius</button>
+        <button type="button" id="Fahrenheit" (click)="cambiarFarenheit(); desactivarF()">Fahrenheit</button>
+    </div> 
+</div>
+
+<div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade" id="pills-{{item.nombreRegion}}" role="tabpanel" [attr.aria-labelledby]="'pills-'+item.nombreRegion+'-tab'" *ngFor="let item of arregloDeRegiones" >
+      <div class="container-fluid" >
+            <div class="row">
+                <div class="col-md-1 col-sm-6" *ngFor="let semana of item.dias" (click)="llevarAFormulario()" >
+                        <p class="dia">{{semana.nombreDia}}</p>
+
+                        <div *ngIf="semana.estadoClima == 'Soleado' ">
+                            <img src="assets/Sol.jpg" alt=""  >
+                        </div>
+                        <div *ngIf="semana.estadoClima == 'Nublado' ">
+                            <img src="assets/parcialmenteSoleado.png" alt=""  >
+                        </div>
+                        <div *ngIf="semana.estadoClima == 'Tormenta' ">
+                            <img src="assets/tormenta.png" alt=""  >
+                        </div>
+                        <div *ngIf="semana.estadoClima == 'Lluvioso' ">
+                            <img src="assets/Gota.png" alt=""  >
+                        </div>
+
+                        <h4 class="temperaturaP">{{semana.temperatura}}°</h4>
+                        <p>{{semana.estadoClima}}</p>
+                        
+                </div>  
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" >
+        <div class="row">
+            <div col-md-4 col-sm-2 id="mensaje">
+                <p>Al dar click sobre cada día permitirá</p>
+                <p>modificar la información</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,30 @@
+#barraRegions{
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    width: 40%;
+}
+
+#barraRegions .nav-item{
+    margin-right: 5%;
+}
+
+.nav-link{
+    font-family: 'Architects Daughter', cursive;
+    color: black;
+}
+
+.nav-link:focus {
+    background-color: #ffffff;
+    color: rgb(205, 216, 195);
+}
+
+
+
+.nav-pills .nav-link.active {
+    background-color: rgb(255, 255, 255);
+}
+
+#barraNavegacion{
+    width: 90%;
+}

@@ -1,0 +1,11 @@
+<nav id="barraNavegacion">
+    <ul class="nav nav-pills light mb-3" id="barraRegions" role="tablist">
+            <li class="nav-item" role="presentation" *ngFor="let item of arregloDeRegiones">
+                
+                <button class="nav-link" id="pills-{{item.nombreRegion}}-tab" data-bs-toggle="pill" [attr.data-bs-target]="'#pills-'+item.nombreRegion" type="button" role="tab" [attr.aria-controls]="'#pills-'+item.nombreRegion" aria-selected="false" 
+                (click)="ubicarRegion(this.item)">{{item.nombreRegion}}</button>
+               
+                
+            </li>
+    </ul>
+</nav>

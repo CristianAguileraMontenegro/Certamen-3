@@ -1,0 +1,109 @@
+<div class="container-fluid" id="containerFormulario">
+    <div class="row" id="rowFormulario">
+      <div class="col-md-6   col-sm-5" id="colFormulario">
+        <form [formGroup]="formulario" (ngSubmit)="validacion()" novalidate> <!--novalidate ua que se estan haciendo con angular-->
+            <div class="contendorFormularios">
+                <label for="regiones">Región</label>
+                <select class="form-select" aria-label="Default select example" id="regiones" formControlName="regiones" placeholder="123-45-678">
+                    <option value="" disabled selected>Select</option>
+                    <option value="Valparaiso">Valparaiso</option>
+                    <option value="Metropolitana">Metropolitana</option>
+                    <option value="BioBio">Bio Bio</option> 
+                    <option value="Araucania">Araucania</option> 
+                </select>
+                <div *ngIf="formulario.controls['regiones'].invalid && (formulario.controls['regiones'].dirty || formulario.controls['regiones'].touched)" class="alert alert-danger"> <!--control se refiere a los controles de cada input-->
+                <!--dirty indica que el ususario modifico el valor, touch indica que lo toco pero no modifico-->
+                    <div *ngIf="formulario.controls['regiones'].hasError('required')"> <!--hasError determina el tipo de error-->
+                        Elija una opcion
+                    </div>
+                </div>
+            </div>
+            <div class="contendorFormularios">
+                <label for="">Estado del clima</label>
+
+                <div class="from-check">
+                    <input type="radio" class="form-check-input clima" name="clima" id="sol" value="Soleado" formControlName="clima">
+                    <label for="sol" class="form-check-label clima">Soleado</label>
+                </div>
+               
+                <div class="from-check">
+                    <input type="radio" class="form-check-input clima" name="clima" id="Lluvioso" value="Lluvioso" formControlName="clima">
+                    <label for="Lluvioso" class="form-check-label clima">Lluvioso</label>
+                </div> 
+                
+                
+                <div class="from-check">
+                    <input type="radio" class="form-check-input clima" name="clima" id="Nublado" value="Nublado" formControlName="clima">
+                    <label for="Nublado" class="form-check-label clima">Nublado</label>
+                </div>
+                
+                <div class="from-check">
+                    <input type="radio" class="form-check-input clima" name="clima" id="tormenta" value="Tormenta" formControlName="clima">
+                    <label for="Tormenta" class="form-check-label clima">Tormenta</label>
+                </div>
+                
+                
+                        <div *ngIf="formulario.controls['clima'].hasError('required')"> <!--hasError determina el tipo de error-->
+                            Elija una opcion
+                        </div>
+                
+            </div>
+          
+
+            <div class="contendorFormularios">
+                <label for="dia">Día</label>
+                <select class="form-select" aria-label="Default select example" id="dia" formControlName="dia">
+                    <option value="" disabled selected>Select</option>
+                    <option value="Lunes">Lunes</option>
+                    <option value="Martes">Martes</option>
+                    <option value="Miercoles">Miercoles</option> 
+                    <option value="Jueves">Jueves</option> 
+                    <option value="Viernes">Viernes</option> 
+                    <option value="Sabado">Sabado</option> 
+                    <option value="Domingo">Domingo</option> 
+                </select>
+                <div *ngIf="formulario.controls['dia'].invalid && (formulario.controls['dia'].dirty || formulario.controls['dia'].touched)" class="alert alert-danger"> <!--control se refiere a los controles de cada input-->
+                <!--dirty indica que el ususario modifico el valor, touch indica que lo toco pero no modifico-->
+                    <div *ngIf="formulario.controls['dia'].hasError('required')"> <!--hasError determina el tipo de error-->
+                        Elija una opcion
+                    </div>
+                </div>
+            </div>
+          
+            <div class="contendorFormularios">
+                <label for="temperatura" class="form-label">Temperatura</label>
+                <input id="temperatura" class="form-control" type="text" formControlName="temperatura" placeholder="input">
+                <div *ngIf="formulario.controls['temperatura'].invalid && (formulario.controls['temperatura'].dirty || formulario.controls['temperatura'].touched)" class="alert alert-danger"> <!--control se refiere a los controles de cada input-->
+                    <!--dirty indica que el ususario modifico el valor, touch indica que lo toco pero no modifico-->
+                    <div *ngIf="formulario.controls['temperatura'].hasError('required')"> <!--hasError determina el tipo de error-->
+                        Temperatura requerida
+                    </div>
+                </div>
+            </div>
+
+            <div class="contendorFormularios">
+                <label >Grados</label>
+                <div class="from-check">
+                    <input type="radio" class="form-check-input grados" name="grados" id="Celcuis" value="Celcuis" formControlName="grados">
+                    <label for="Celcuis" class="form-check-label grados">Celcuis</label>
+                </div>
+               
+                <div class="from-check">
+                    <input type="radio" class="form-check-input grados" name="grados" id="Fahrenheit" value="Fahrenheit" formControlName="grados">
+                    <label for="Fahrenheit" class="form-check-label grados">Fahrenheit</label>
+                </div> 
+                        
+                <div *ngIf="formulario.controls['grados'].hasError('required')"> <!--hasError determina el tipo de error-->
+                    Elija una opcion
+                </div>
+            </div>
+          
+            
+          <div>
+             <button class="btn btn-primary" type="submit" [disabled]="!formulario.valid" id="boton">Actualizar</button> <!--!Formulario.valid indica si el formulario esta correcto, viene incorrecto lo que con ! pasa a correcto-->
+          </div>
+        </form>
+      </div>
+  
+    </div>
+  </div>
